@@ -36,7 +36,7 @@ def process(h: float, m: float, n: int, input: IO):
             point: tuple[float, float] = img["MAPLatitude"], img["MAPLongitude"]
             if got == n:
                 seq_id = str(uuid4())
-                got = 0
+                got = 1
             else:
                 got += 1
             if m > 0:
