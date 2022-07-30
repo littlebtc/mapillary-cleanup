@@ -44,11 +44,11 @@ def process(z: str, m: float, n: int, s: int, input: IO):
     zone = ZoneInfo(z)
     with json_path.open("r+") as fd:
         orig = load(fd)
-        for img in orig:
-            time = datetime.strptime(img["MAPCaptureTime"], FORMAT).replace(tzinfo=zone)
+        for img in orig:    
             if "error" in img:
                 errors.append(img)
                 continue
+            time = datetime.strptime(img["MAPCaptureTime"], FORMAT).replace(tzinfo=zone)
             point: tuple[float, float] = img["MAPLatitude"], img["MAPLongitude"]
             if got == n or (
                 prev_time is not None and time - prev_time >= timedelta(seconds=s)
