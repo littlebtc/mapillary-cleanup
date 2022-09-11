@@ -22,7 +22,7 @@ FORMAT = "%Y_%m_%d_%H_%M_%S_%f"
 @option("-m", default=0, type=float, help="Meters to be considered as duplicate point")
 @option(
     "-n",
-    default=150,
+    default=200,
     type=int,
     help="Maximum images (including duplicates) in a sequence",
 )
